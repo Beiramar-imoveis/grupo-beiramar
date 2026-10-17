@@ -226,7 +226,9 @@
 }
 
 .hero h1{
-  font-size:clamp(2.9rem,7vw,5.6rem);
+  font-size:clamp(2.1rem,1.2rem + 3.2vw,4rem);
+  line-height:1.12;
+  letter-spacing:-.015em;
   margin:26px 0 26px;
   color:#fff;
   font-weight:300;
@@ -234,7 +236,7 @@
 
 .hero h1 em{
   font-style:normal;
-  font-weight:500;
+  font-weight:400;
   color:var(--royal-soft);
 }
 
@@ -383,9 +385,6 @@
     padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
 
 
-  /* seções ocultas (remova o atributo hidden no HTML para reexibir) */
-  [hidden]{display:none!important}
-
   /* ---------- mapa interativo de atuação ---------- */
   .bignum-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:start}
   .bignum-stack .bignum-grid{grid-template-columns:repeat(2,1fr);gap:14px}
@@ -414,10 +413,6 @@
 
   .bn-map{width:100%;max-width:820px;margin:0 auto;position:sticky;top:110px;align-self:start}
   @media(max-width:1100px){.bn-map{position:static}}
-  @media(min-width:1101px){
-    .bignum-layout{grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:44px}
-    .bn-map{max-width:980px}
-  }
   .bn-map-svg{display:block;width:100%;height:auto;overflow:visible;-webkit-tap-highlight-color:transparent}
   .bn-map .bn-us,.bn-map .bn-glows,.bn-map .bn-balloons,.bn-map .bn-countries{pointer-events:none}
   .bn-map .uf{opacity:.55;stroke:rgba(255,255,255,.22);stroke-width:1.4;stroke-linejoin:round}
@@ -920,7 +915,7 @@
       <a href="#grupo">Nossa História</a>
       <a href="#frentes">Empresas do Grupo</a>
       <a href="#portfolio">Portfólio</a>
-      <a href="#news" hidden>News</a>
+      <a href="#news">News</a>
       <a href="#contato" class="nav-cta">Fale com o Grupo</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
@@ -933,7 +928,7 @@
   <a href="#grupo">Nossa História</a>
   <a href="#frentes">Empresas do Grupo</a>
   <a href="#portfolio">Portfólio</a>
-  <a href="#news" hidden>News</a>
+  <a href="#news">News</a>
   <a href="#contato">Fale com o Grupo</a>
 </div>
 
@@ -1109,6 +1104,7 @@
 <rect width="104.307" height="55.8013" fill="white" transform="translate(181.941)"/>
 </clipPath>
 </defs></svg></span>
+        <p>Presença em 2 países (Brasil e EUA), 3 Estados e 9 Cidades.</p>
       </div>
       <div class="bignum-grid">
         <div class="bn"><div class="bn-num" data-to="2.2" data-prefix="+" data-suffix=" Bi" data-dec="1">+2.2<span class="u">Bi</span></div><div class="bn-lbl">em ativos imobiliários geridos</div></div>
@@ -1146,7 +1142,7 @@
 </section>
 
 <!-- ============ VÍDEO INSTITUCIONAL ============ -->
-<section class="video-band" id="video" hidden>
+<section class="video-band" id="video">
   <div class="wrap">
     <div class="video-head reveal">
       <span class="eyebrow">Nossa história em vídeo</span>
@@ -1240,8 +1236,8 @@
 </clipPath>
 </defs></svg></span>
         <h3>Onde tudo começou</h3>
-        <p>Uma imobiliária full service que atua em Brasília, oferecendo soluções completas em compra, venda, locação e gestão de imóveis.</p>
-        <a href="https://www.beiramarimoveis.com.br/" class="lk">Conheça a Beiramar Imóveis <span class="arrow">→</span></a>
+        <p>A frente imobiliária do grupo. Compra, venda e locação de imóveis com o atendimento consultivo que transformou a Beiramar em referência em Brasília. Aqui, cada cliente encontra mais do que um imóvel: ele encontra o lugar certo.</p>
+        <a href="#contato" class="lk">Falar com a Beiramar Imóveis <span class="arrow">→</span></a>
       </div>
 
       <div class="frente reveal">
@@ -1259,8 +1255,8 @@
 </clipPath>
 </defs></svg></span>
         <h3>Gestão de ativos imobiliários</h3>
-        <p>Gestora de recursos especializada em real estate, com atuação nos mercados regionais de maior crescimento do país.</p>
-        <a href="https://www.brmasset.com.br/" class="lk">Conheça a BRM Asset <span class="arrow">→</span></a>
+        <p>Gestora de recursos com foco no setor imobiliário, com atuação em fundos imobiliários, crédito, desenvolvimento e renda.</p>
+        <a href="#contato" class="lk">Conhecer a BRM Asset <span class="arrow">→</span></a>
       </div>
 
       <div class="frente reveal">
@@ -1279,6 +1275,7 @@
 </defs></svg></span>
         <h3>Investment Banking</h3>
         <p>Estrutura operações de equity e crédito, conectando empreendedores regionais ao mercado de capitais.</p>
+        <a href="#contato" class="lk">Conhecer a BRM IB <span class="arrow">→</span></a>
       </div>
 
       <div class="frente reveal">
@@ -1296,7 +1293,8 @@
 </clipPath>
 </defs></svg></span>
         <h3>Incorporação imobiliária</h3>
-        <p>Plataforma completa de soluções para impulsionar o resultado de empreendimentos imobiliários.</p>
+        <p>A frente que constrói o futuro do grupo. A BRM Inc concebe e desenvolve empreendimentos do zero. Do terreno à entrega das chaves, traduzindo em concreto a experiência de 45 anos de mercado.</p>
+        <a href="#contato" class="lk">Conhecer a BRM Inc <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -1320,8 +1318,8 @@
           <h3>Casa Pedra</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Águas Claras, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">73MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">62</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">2025</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">60</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1332,8 +1330,8 @@
           <h3>Casa 35</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Águas Claras, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">45MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">136</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1344,8 +1342,8 @@
           <h3>Eleva 25</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Águas Claras, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">98MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">304</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1368,8 +1366,8 @@
           <h3>Chácara Bernadette</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Sobradinho, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">474MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">696</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">320MM</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">300</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1380,8 +1378,8 @@
           <h3>Next</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Taguatinga, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">50MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">114</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1392,8 +1390,8 @@
           <h3>Nexus</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Taguatinga, Brasília — DF</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">45MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">128</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1404,8 +1402,8 @@
           <h3>Parque Vivá</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Rio Verde — GO</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">281MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">831</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1416,8 +1414,8 @@
           <h3>Brava Riserva</h3>
           <div class="port-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Praia Brava, Itajaí — SC</div>
           <div class="port-specs">
-            <div class="port-spec"><div class="v">298MM</div><div class="k">VGV</div></div>
-            <div class="port-spec"><div class="v">162</div><div class="k">Unidades</div></div>
+            <div class="port-spec"><div class="v">[XXXX]</div><div class="k">VGV</div></div>
+            <div class="port-spec"><div class="v">[X]</div><div class="k">Unidades</div></div>
           </div>
         </div>
       </div>
@@ -1457,7 +1455,7 @@
 </section>
 
 <!-- ============ NEWS ============ -->
-<section class="band band-mist" id="news" hidden>
+<section class="band band-mist" id="news">
   <div class="wrap">
     <div class="frentes-intro reveal">
       <div style="max-width:640px">
@@ -1596,13 +1594,13 @@
 <rect width="493.526" height="264.021" fill="white" transform="translate(0 0.138184)"/>
 </clipPath>
 </defs></svg></a>
-        <p>Há 45 anos construindo o jeito de morar e investir de Brasília.</p>
+        <p>Há 45 anos construindo o jeito de morar e investir.</p>
       </div>
       <div class="foot-col">
         <h4>O Grupo</h4>
         <a href="#grupo">Nossa história</a>
         <a href="#frentes">Frentes</a>
-        <a href="#news" hidden>News</a>
+        <a href="#news">News</a>
       </div>
       <div class="foot-col">
         <h4>Frentes</h4>
