@@ -5,10 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grupo Beiramar — 45 anos construindo o jeito de morar de Brasília</title>
 <meta name="description" content="Há 45 anos, o Grupo Beiramar transforma o mercado imobiliário de Brasília. Imóveis, gestão de ativos e incorporação sob uma mesma assinatura de solidez.">
+
+<!-- Identidade do site -->
+<link rel="icon" type="image/png" sizes="32x32"
+      href="/favicon.png">
+
+<!-- Prévia de compartilhamento -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Grupo Beiramar">
+<meta property="og:title"
+      content="Grupo Beiramar | Soluções imobiliárias">
+<meta property="og:description"
+      content="Conheça o Grupo Beiramar e suas frentes de atuação.">
+<meta property="og:url"
+      content="https://grupobeiramar.com.br/">
+<meta property="og:image"
+      content="https://grupobeiramar.com.br/compartilhamento.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"
+      content="Grupo Beiramar">
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
+
+/* Oculta as seções Vídeo Institucional e News */
+#video, #news {
+  display: none !important;
+}
+
 :root{
     /* Paleta oficial — Manual de Identidade Visual Grupo Beiramar */
     --navy:#00458C;        /* Azul Beiramar — principal */
@@ -915,7 +944,7 @@
       <a href="#grupo">Nossa História</a>
       <a href="#frentes">Empresas do Grupo</a>
       <a href="#portfolio">Portfólio</a>
-      <a href="#news">News</a>
+      <!-- <a href="#news">News</a> -->
       <a href="#contato" class="nav-cta">Fale com o Grupo</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
@@ -928,7 +957,7 @@
   <a href="#grupo">Nossa História</a>
   <a href="#frentes">Empresas do Grupo</a>
   <a href="#portfolio">Portfólio</a>
-  <a href="#news">News</a>
+  <!-- <a href="#news">News</a> -->
   <a href="#contato">Fale com o Grupo</a>
 </div>
 
@@ -1551,7 +1580,7 @@
       </div>
 
       <div class="reveal">
-        <form id="contactForm">
+        <form id="contactForm" action="https://formsubmit.co/contato@grupobeiramar.com.br" method="POST">
           <div class="field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required></div>
           <div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" required></div>
           <div class="field"><label for="assunto">Sobre o que você quer falar?</label>
@@ -1600,7 +1629,7 @@
         <h4>O Grupo</h4>
         <a href="#grupo">Nossa história</a>
         <a href="#frentes">Frentes</a>
-        <a href="#news">News</a>
+        <!-- <a href="#news">News</a> -->
       </div>
       <div class="foot-col">
         <h4>Frentes</h4>
@@ -1692,13 +1721,42 @@
   },{threshold:.6});
   document.querySelectorAll('.bn-num').forEach(el=>bnIO.observe(el));
 
-  document.getElementById('contactForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const btn=this.querySelector('button');
-    btn.innerHTML='Mensagem enviada ✓';
-    btn.style.background='var(--royal)';
-    setTimeout(()=>{this.reset();btn.innerHTML='Enviar mensagem <span class="arrow">→</span>';btn.style.background='';},2600);
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const btn = form.querySelector('button');
+  const originalText = btn.innerHTML;
+
+  btn.innerHTML = 'Enviando...';
+  btn.disabled = true;
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      btn.innerHTML = 'Mensagem enviada ✓';
+      btn.style.background = 'var(--royal)';
+      setTimeout(() => {
+        form.reset();
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 2600);
+    } else {
+      alert('Ocorreu um erro ao enviar. Tente novamente.');
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
+  }).catch(error => {
+    alert('Erro de conexão ao enviar a mensagem.');
+    btn.innerHTML = originalText;
+    btn.disabled = false;
   });
+});
 
   /* ---------- mapa interativo: hover (mouse), toque e teclado ---------- */
   (function(){
