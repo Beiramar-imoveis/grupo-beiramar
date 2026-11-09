@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacidade e Cookies — Grupo Beiramar</title>
+<meta name="description" content="Como o Grupo Beiramar trata os dados pessoais e os cookies do site grupobeiramar.com.br, em conformidade com a LGPD.">
+<link rel="canonical" href="https://grupobeiramar.com.br/privacidade.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Grupo Beiramar">
+<meta property="og:title" content="Privacidade e Cookies | Grupo Beiramar">
+<meta property="og:description" content="Como tratamos seus dados pessoais e os cookies deste site.">
+<meta property="og:url" content="https://grupobeiramar.com.br/privacidade.html">
+<meta property="og:image" content="https://grupobeiramar.com.br/compartilhamento.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/consentimento.css">
+<style>
+  :root{
+    /* Paleta oficial — Manual de Identidade Visual Grupo Beiramar (igual ao index.html) */
+    --navy:#00458C;--navy-deep:#003168;--ink:#001320;--royal:#1D63FF;--royal-soft:#1CA3E0;
+    --steel:#667482;--steel-soft:#A9B4C0;--mist:#EEF5FF;--paper:#F6FAFF;--white:#FFFFFF;
+    --text:#0E2136;--text-soft:#496585;--line:rgba(0,69,140,.15);
+    --display:"DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,-apple-system,sans-serif;
+    --maxw:1240px;--ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:110px}
+  body{font-family:var(--body);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--royal);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  @media(max-width:720px){.wrap{padding:0 22px}}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--royal);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--royal);opacity:.6}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:-.01em}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:15px 28px;border-radius:2px;transition:.35s var(--ease);cursor:pointer;border:none}
+  .btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--navy);background:var(--mist)}
+  .arrow{transition:transform .35s var(--ease)}
+  .btn:hover .arrow,.back:hover .arrow{transform:translateX(-4px)}
+
+  /* ---------- header (claro, logo colorida) ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s var(--ease);background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(255,255,255,.9);border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand{display:flex;align-items:center}
+  .brand .logo{height:28px;width:auto;display:block}
+  @media(max-width:720px){.brand .logo{height:22px}}
+  .navlinks{display:flex;align-items:center;gap:38px}
+  .navlinks a{font-size:14.5px;font-weight:500;color:var(--text);position:relative;transition:.3s}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--royal);transition:.3s var(--ease)}
+  .navlinks a:hover::after{width:100%}
+  .nav-cta{background:var(--royal);color:#fff!important;padding:11px 22px;border-radius:2px;font-weight:600}
+  .nav-cta::after{display:none!important}
+  .nav-cta:hover{background:var(--navy)}
+  .back{display:none;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy)}
+  @media(max-width:920px){.navlinks{display:none}.back{display:inline-flex}}
+
+  /* ---------- topo da página (azuis claros) ---------- */
+  .legal-hero{
+    position:relative;overflow:hidden;padding:178px 0 84px;
+    background:
+      radial-gradient(60% 90% at 88% 0%,rgba(28,163,224,.22) 0%,rgba(28,163,224,0) 60%),
+      radial-gradient(50% 70% at 0% 100%,rgba(29,99,255,.10) 0%,rgba(29,99,255,0) 60%),
+      linear-gradient(180deg,var(--mist) 0%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .legal-hero .mark{position:absolute;right:max(32px,calc((100vw - var(--maxw))/2 + 32px));top:50%;transform:translateY(-35%);width:340px;opacity:.06;pointer-events:none}
+  @media(max-width:720px){.legal-hero{padding:136px 0 60px}.legal-hero .mark{width:200px;right:-40px;top:auto;bottom:-30px;transform:none}}
+  .legal-hero h1{font-size:clamp(2.5rem,5.4vw,4.2rem);color:var(--navy);font-weight:300;margin:22px 0 20px;position:relative}
+  .legal-hero h1 em{font-style:normal;font-weight:500;color:var(--royal)}
+  .legal-hero .sub{max-width:620px;font-size:1.12rem;color:var(--text-soft);position:relative}
+  .legal-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:36px;position:relative}
+  .legal-meta .updated{font-size:13.5px;color:var(--text-soft)}
+  .legal-meta .updated strong{color:var(--navy);font-weight:600}
+
+  /* ---------- conteúdo ---------- */
+  .legal{padding:80px 0 120px}
+  .legal-grid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:80px;align-items:start}
+  @media(max-width:960px){.legal-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+  .toc{position:sticky;top:116px;padding:26px 24px;background:var(--paper);border:1px solid var(--line);border-radius:4px}
+  @media(max-width:960px){.toc{position:static}}
+  .toc p{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:14px}
+  .toc ol{list-style:none;counter-reset:toc}
+  .toc li{counter-increment:toc}
+  .toc a{display:flex;gap:10px;padding:7px 0;font-size:14px;color:var(--text-soft);transition:color .3s}
+  .toc a::before{content:counter(toc,decimal-leading-zero);font-size:11.5px;font-weight:600;color:var(--royal-soft);padding-top:2px;min-width:18px}
+  .toc a:hover,.toc a.is-active{color:var(--navy)}
+  .toc a.is-active{font-weight:600}
+
+  .legal-body{max-width:760px}
+  .legal-body section{padding:0 0 52px;margin-bottom:52px;border-bottom:1px solid var(--line)}
+  .legal-body section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .legal-body .num{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--royal-soft);margin-bottom:12px}
+  .legal-body h2{font-size:clamp(1.55rem,2.6vw,2rem);color:var(--navy);font-weight:400;margin-bottom:20px;line-height:1.15}
+  .legal-body h3{font-size:1.08rem;font-weight:600;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+  .legal-body p,.legal-body li{font-size:16px;color:var(--text);line-height:1.75}
+  .legal-body p + p{margin-top:14px}
+  .legal-body ul{list-style:none;margin:14px 0}
+  .legal-body ul li{position:relative;padding-left:22px;margin-bottom:10px}
+  .legal-body ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--royal-soft)}
+  .legal-body strong{font-weight:600;color:var(--navy)}
+  .legal-body a:not(.btn){color:var(--royal);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+  .tbd{background:#FFF4D6;color:#7A5A00;padding:1px 6px;border-radius:3px;font-weight:600;white-space:nowrap}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}}
+  .card{padding:22px 22px 20px;background:var(--paper);border:1px solid var(--line);border-radius:4px}
+  .card .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--royal);background:#fff;border:1px solid var(--line);padding:4px 9px;border-radius:20px;margin-bottom:12px}
+  .card strong{display:block;font-size:1rem;margin-bottom:6px}
+  .card p{font-size:14.5px;line-height:1.6;color:var(--text-soft)}
+
+  .table-wrap{margin-top:20px;border:1px solid var(--line);border-radius:4px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+  th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--mist);padding:13px 16px}
+  td{padding:13px 16px;border-top:1px solid var(--line);color:var(--text-soft);vertical-align:top}
+  td:first-child{font-weight:600;color:var(--text);white-space:nowrap}
+  .pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .pill-nec{background:var(--mist);color:var(--navy)}
+  .pill-ana{background:rgba(28,163,224,.13);color:#0B6C99}
+
+  .callout{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding:22px 24px;border-radius:4px;background:linear-gradient(120deg,var(--mist),#E3F3FC);border:1px solid var(--line)}
+  .callout p{font-size:15px;color:var(--navy);max-width:440px}
+
+  /* ---------- footer (igual ao index.html) ---------- */
+  footer{background:var(--ink);color:#fff;padding:80px 0 36px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1)}
+  @media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.foot-top{grid-template-columns:1fr}}
+  .foot-brand .brand{margin-bottom:20px}
+  .foot-brand .brand .logo{height:26px}
+  .foot-brand .brand .logo-neg{display:block}
+  .foot-brand p{color:#9DB0CA;font-size:14.5px;max-width:280px}
+  .foot-col h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:20px;font-family:var(--body);font-weight:700}
+  .foot-col a{display:block;color:#B9C6DC;font-size:14.5px;margin-bottom:13px;transition:.3s}
+  .foot-col a:hover{color:#fff;padding-left:4px}
+  .foot-addr{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:44px 0;margin-top:8px;border-top:1px solid rgba(255,255,255,.1)}
+  @media(max-width:820px){.foot-addr{grid-template-columns:repeat(2,1fr);gap:28px}}
+  @media(max-width:520px){.foot-addr{grid-template-columns:1fr}}
+  .foot-unit-name{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.05rem;color:#fff;margin-bottom:8px}
+  .foot-unit-badge{font-family:var(--body);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--royal);color:#fff;padding:3px 8px;border-radius:20px;line-height:1}
+  .foot-unit-addr{font-size:13px;color:#9DB0CA;line-height:1.5}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:32px;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.1)}
+  .foot-bot p{color:#7E92AE;font-size:13px}
+  .foot-social{display:flex;gap:14px}
+  .foot-social a{width:38px;height:38px;border:1px solid rgba(255,255,255,.16);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#B9C6DC;transition:.3s}
+  .foot-social a:hover{background:var(--royal);border-color:var(--royal);color:#fff}
+  .foot-social svg{width:17px;height:17px}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Grupo Beiramar — página inicial"><svg class="logo logo-color" viewBox="0 0 2466 265" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grupo Beiramar"><path d="M851.474 149.402H959.987V111.057H851.474V39.3625H986.676V0.138672H799.021V264.114H988.48V223.502H851.474V149.402Z" fill="#00458C"/>
+<path d="M1083.27 0.138672H1030.77V264.114H1083.27V0.138672Z" fill="#00458C"/>
+<path d="M1354.02 77.7539C1354.38 66.8702 1352.19 56.0525 1347.64 46.1602C1343.09 36.2679 1336.29 27.5737 1327.79 20.7682C1309.89 6.5218 1287.92 0.138672 1251.61 0.138672H1138.15V264.114H1190.74V38.2524H1247.68C1284.68 38.2524 1299.34 57.1706 1299.34 77.06C1299.34 109.808 1269.18 117.81 1243.33 117.81H1235.65L1297.12 264.114H1352.63L1301.29 147.737C1316.18 141.816 1353.83 127.2 1353.83 77.7539" fill="#00458C"/>
+<path d="M657.812 224.658H583.481V37.79H652.447C664.381 37.79 696.343 42.1379 696.343 73.0359C696.343 96.1632 679.321 111.427 653.881 111.427H626.729V149.078H657.812C686.722 149.078 704.067 165.221 704.067 186.591C704.067 211.106 684.686 224.658 657.812 224.658ZM695.464 127.524C747.963 116.423 748.425 76.4126 748.425 68.503C748.574 52.6067 742.804 37.2236 732.236 25.3475C709.941 -1.98503e-05 676.222 0 653.603 0H533.526V264.114H667.433C689.636 264.114 711.653 261.801 733.947 244.825C749.258 232.846 757.584 211.106 757.584 192.095C757.793 176.145 751.827 160.731 740.932 149.078C725.668 133.167 707.259 130.114 695.464 127.663" fill="#00458C"/>
+<path d="M2062.46 0.138672L1965.33 264.114H2010.52L2012 260.275L2088.69 45.3294L2136.38 175.629H2072.59V176.461C2134.34 184.741 2162.1 246.953 2165.1 254.4L2167.46 261.015L2168.57 264.114H2224.68L2126.85 0.138672H2062.46Z" fill="#00458C"/>
+<path d="M1468.11 0.138672L1370.98 264.114H1416.03L1417.42 260.275L1494.43 45.3294L1542.08 175.629H1478.24V176.461C1543.97 185.25 1571.45 255.88 1571.45 255.88L1573.94 262.633L1574.41 264.114H1630.56L1532.45 0.138672H1468.11Z" fill="#00458C"/>
+<path d="M2464.94 77.7539C2465.3 66.8756 2463.12 56.0639 2458.57 46.1736C2454.03 36.2833 2447.25 27.5856 2438.76 20.7682C2420.77 6.5218 2398.94 0.138672 2362.58 0.138672H2249.21V264.114H2301.67V38.2524H2358.65C2395.65 38.2524 2410.32 57.1706 2410.32 77.06C2410.32 109.808 2380.16 117.81 2354.21 117.81H2346.67L2408.33 264.114H2463.83L2412.58 147.737C2427.52 141.816 2465.08 127.2 2465.08 77.7539" fill="#00458C"/>
+<path d="M1797.92 170.356L1737.14 0.138672H1654.8V264.16H1697.64V32.9794L1778.67 264.16H1806.24L1887.14 32.9794V264.16H1941.03V0.138672H1858.19L1797.92 170.356Z" fill="#00458C"/>
+<g clip-path="url(#clip_hcolor)">
+<path d="M493.526 138.936L493.517 140.531C492.65 208.955 436.93 264.139 368.301 264.139H125.226C56.0556 264.138 0 208.082 0 138.912V125.365C9.16384e-07 56.1952 56.0556 0.139861 125.226 0.139648H493.526V138.936ZM101.43 94.4736C95.6923 94.4737 90.7293 95.612 86.54 97.8887C82.4418 100.074 79.2534 103.034 76.9766 106.768C74.7909 110.501 73.6983 114.646 73.6982 119.199C73.6982 123.753 74.7909 127.897 76.9766 131.631C78.1797 133.604 79.6398 135.359 81.3516 136.899L69.5996 148.98V152.122C70.7836 153.306 72.3326 154.491 74.2451 155.675C75.2007 156.266 76.2473 156.835 77.3848 157.381C74.8 159.339 72.7972 161.502 71.376 163.871C69.7367 166.512 68.917 169.427 68.917 172.614C68.917 176.895 70.2378 180.538 72.8789 183.543C75.6111 186.639 79.391 188.962 84.2178 190.51C89.1356 192.058 94.8279 192.832 101.294 192.832C108.397 192.832 114.226 191.739 118.779 189.554C123.333 187.368 126.703 184.545 128.889 181.084C131.166 177.714 132.304 174.253 132.304 170.701C132.304 166.603 131.394 163.142 129.572 160.319C127.751 157.496 124.927 155.264 121.102 153.625C117.277 151.986 112.358 150.939 106.348 150.483C102.796 150.119 99.8365 149.801 97.4688 149.527C95.1919 149.163 93.2787 148.798 91.7305 148.434C90.2735 148.069 89.0437 147.705 88.042 147.341C87.688 147.212 87.3407 147.081 86.998 146.952L91.123 142.369C94.2248 143.313 97.6594 143.789 101.43 143.789C107.167 143.789 112.085 142.696 116.184 140.511C120.373 138.325 123.561 135.365 125.747 131.631C127.933 127.897 129.025 123.753 129.025 119.199C129.025 114.834 128.018 110.847 126.01 107.235L137.905 106.085V96.1123H112.174C108.986 95.0197 105.404 94.4736 101.43 94.4736ZM316.2 94.4736C312.466 94.4736 309.006 95.0195 305.818 96.1123C302.722 97.2052 299.943 98.7532 297.484 100.757C295.117 102.76 293.067 105.174 291.337 107.997H290.791L289.698 96.1123H274.261V191.193H292.703V155.128C294.98 157.951 298.031 160.41 301.856 162.505C305.772 164.508 310.371 165.511 315.653 165.511C322.302 165.511 328.039 164.007 332.866 161.002C337.693 157.906 341.427 153.671 344.068 148.298C346.709 142.925 348.03 136.823 348.03 129.992C348.03 123.162 346.709 117.059 344.068 111.686C341.427 106.312 337.739 102.123 333.003 99.1182C328.267 96.0217 322.666 94.4736 316.2 94.4736ZM92.4111 161.73C95.5005 162.217 98.9618 162.614 102.796 162.915C107.805 163.279 111.175 164.099 112.905 165.374C114.636 166.74 115.501 168.652 115.501 171.111C115.501 172.842 114.954 174.344 113.861 175.619C112.768 176.985 111.175 178.033 109.08 178.762C106.986 179.49 104.39 179.854 101.294 179.854C98.1975 179.854 95.4646 179.49 93.0967 178.762C90.7289 178.124 88.8622 177.168 87.4961 175.893C86.2211 174.618 85.583 173.069 85.583 171.248C85.583 168.789 86.494 166.603 88.3154 164.69C89.3369 163.618 90.7022 162.631 92.4111 161.73ZM195.385 96.1123V134.09C195.385 140.92 196.432 146.704 198.526 151.439C200.621 156.084 203.627 159.59 207.543 161.958C211.459 164.326 216.195 165.511 221.75 165.511C227.397 165.511 232.087 164.417 235.821 162.231C239.646 159.955 242.607 156.904 244.701 153.079H245.247L246.887 163.871H262.597V96.1123H244.154V131.085C244.154 135.001 243.471 138.37 242.105 141.193C240.739 144.017 238.827 146.203 236.368 147.751C234 149.208 231.222 149.937 228.034 149.937C223.116 149.936 219.473 148.434 217.105 145.429C214.829 142.423 213.69 138.097 213.69 132.451V96.1123H195.385ZM389.744 94.4736C383.278 94.4737 377.404 95.9761 372.122 98.9814C366.84 101.987 362.65 106.176 359.554 111.55C356.457 116.832 354.909 122.98 354.909 129.992C354.909 136.913 356.412 143.06 359.417 148.434C362.513 153.807 366.703 157.997 371.985 161.002C377.268 164.007 383.187 165.511 389.744 165.511C396.301 165.511 402.176 164.007 407.367 161.002C412.649 157.997 416.839 153.853 419.936 148.57C423.032 143.197 424.58 137.004 424.58 129.992C424.58 122.98 423.032 116.832 419.936 111.55C416.93 106.177 412.786 101.987 407.504 98.9814C402.222 95.976 396.301 94.4736 389.744 94.4736ZM189.869 94.4736C186.044 94.4736 182.583 94.8825 179.486 95.7021C176.481 96.4308 173.795 97.9798 171.427 100.348C169.059 102.624 166.873 106.176 164.869 111.003H164.323L162.684 96.1123H146.974V163.871H165.416V133.134C165.416 129.673 165.826 126.713 166.646 124.254C167.556 121.795 168.831 119.837 170.471 118.38C172.11 116.832 174.114 115.739 176.481 115.102C178.94 114.373 181.718 114.009 184.814 114.009H189.869V94.4736ZM310.872 109.637C314.606 109.637 317.839 110.502 320.571 112.232C323.395 113.963 325.535 116.376 326.992 119.473C328.54 122.478 329.314 126.03 329.314 130.128C329.314 134.135 328.54 137.688 326.992 140.784C325.535 143.789 323.394 146.157 320.571 147.888C317.839 149.618 314.606 150.483 310.872 150.483C307.229 150.483 303.996 149.618 301.173 147.888C298.35 146.157 296.164 143.789 294.616 140.784C293.068 137.688 292.294 134.135 292.294 130.128C292.294 126.03 293.068 122.478 294.616 119.473C296.164 116.376 298.35 113.963 301.173 112.232C303.996 110.502 307.229 109.637 310.872 109.637ZM389.881 110.047C392.704 110.047 395.3 110.775 397.668 112.232C400.127 113.69 402.085 115.921 403.542 118.927C404.999 121.841 405.728 125.53 405.728 129.992C405.727 134.454 404.999 138.188 403.542 141.193C402.085 144.108 400.127 146.294 397.668 147.751C395.3 149.208 392.613 149.937 389.607 149.937C386.784 149.936 384.143 149.208 381.685 147.751C379.317 146.294 377.404 144.108 375.947 141.193C374.49 138.188 373.761 134.455 373.761 129.992C373.761 125.53 374.49 121.841 375.947 118.927C377.404 115.921 379.362 113.69 381.821 112.232C384.28 110.775 386.967 110.047 389.881 110.047ZM101.43 107.997C104.981 107.997 107.85 108.954 110.036 110.866C112.313 112.688 113.452 115.465 113.452 119.199C113.452 122.933 112.313 125.756 110.036 127.669C107.85 129.49 104.937 130.401 101.294 130.401C97.7421 130.401 94.8276 129.49 92.5508 127.669C90.3651 125.756 89.2715 122.933 89.2715 119.199C89.2715 115.465 90.3651 112.688 92.5508 110.866C94.8275 108.954 97.7871 107.997 101.43 107.997Z" fill="#667482"/>
+</g>
+<defs>
+<clipPath id="clip_hcolor">
+<rect width="493.526" height="264.021" fill="white" transform="translate(0 0.138184)"/>
+</clipPath>
+</defs></svg></a>
+    <nav class="navlinks" aria-label="Menu principal">
+      <a href="/">Início</a>
+      <a href="/#grupo">Nossa História</a>
+      <a href="/#frentes">Empresas do Grupo</a>
+      <a href="/#portfolio">Portfólio</a>
+      <a href="/#contato" class="nav-cta">Fale com o Grupo</a>
+    </nav>
+    <a href="/" class="back"><span class="arrow">←</span> Voltar ao site</a>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero">
+    <svg class="mark" viewBox="0 0 494 265" aria-hidden="true" focusable="false"><path d="M493.526 138.936L493.517 140.531C492.65 208.955 436.93 264.139 368.301 264.139H125.226C56.0556 264.138 0 208.082 0 138.912V125.365C9.16384e-07 56.1952 56.0556 0.139861 125.226 0.139648H493.526V138.936ZM101.43 94.4736C95.6923 94.4737 90.7293 95.612 86.54 97.8887C82.4418 100.074 79.2534 103.034 76.9766 106.768C74.7909 110.501 73.6983 114.646 73.6982 119.199C73.6982 123.753 74.7909 127.897 76.9766 131.631C78.1797 133.604 79.6398 135.359 81.3516 136.899L69.5996 148.98V152.122C70.7836 153.306 72.3326 154.491 74.2451 155.675C75.2007 156.266 76.2473 156.835 77.3848 157.381C74.8 159.339 72.7972 161.502 71.376 163.871C69.7367 166.512 68.917 169.427 68.917 172.614C68.917 176.895 70.2378 180.538 72.8789 183.543C75.6111 186.639 79.391 188.962 84.2178 190.51C89.1356 192.058 94.8279 192.832 101.294 192.832C108.397 192.832 114.226 191.739 118.779 189.554C123.333 187.368 126.703 184.545 128.889 181.084C131.166 177.714 132.304 174.253 132.304 170.701C132.304 166.603 131.394 163.142 129.572 160.319C127.751 157.496 124.927 155.264 121.102 153.625C117.277 151.986 112.358 150.939 106.348 150.483C102.796 150.119 99.8365 149.801 97.4688 149.527C95.1919 149.163 93.2787 148.798 91.7305 148.434C90.2735 148.069 89.0437 147.705 88.042 147.341C87.688 147.212 87.3407 147.081 86.998 146.952L91.123 142.369C94.2248 143.313 97.6594 143.789 101.43 143.789C107.167 143.789 112.085 142.696 116.184 140.511C120.373 138.325 123.561 135.365 125.747 131.631C127.933 127.897 129.025 123.753 129.025 119.199C129.025 114.834 128.018 110.847 126.01 107.235L137.905 106.085V96.1123H112.174C108.986 95.0197 105.404 94.4736 101.43 94.4736ZM316.2 94.4736C312.466 94.4736 309.006 95.0195 305.818 96.1123C302.722 97.2052 299.943 98.7532 297.484 100.757C295.117 102.76 293.067 105.174 291.337 107.997H290.791L289.698 96.1123H274.261V191.193H292.703V155.128C294.98 157.951 298.031 160.41 301.856 162.505C305.772 164.508 310.371 165.511 315.653 165.511C322.302 165.511 328.039 164.007 332.866 161.002C337.693 157.906 341.427 153.671 344.068 148.298C346.709 142.925 348.03 136.823 348.03 129.992C348.03 123.162 346.709 117.059 344.068 111.686C341.427 106.312 337.739 102.123 333.003 99.1182C328.267 96.0217 322.666 94.4736 316.2 94.4736ZM92.4111 161.73C95.5005 162.217 98.9618 162.614 102.796 162.915C107.805 163.279 111.175 164.099 112.905 165.374C114.636 166.74 115.501 168.652 115.501 171.111C115.501 172.842 114.954 174.344 113.861 175.619C112.768 176.985 111.175 178.033 109.08 178.762C106.986 179.49 104.39 179.854 101.294 179.854C98.1975 179.854 95.4646 179.49 93.0967 178.762C90.7289 178.124 88.8622 177.168 87.4961 175.893C86.2211 174.618 85.583 173.069 85.583 171.248C85.583 168.789 86.494 166.603 88.3154 164.69C89.3369 163.618 90.7022 162.631 92.4111 161.73ZM195.385 96.1123V134.09C195.385 140.92 196.432 146.704 198.526 151.439C200.621 156.084 203.627 159.59 207.543 161.958C211.459 164.326 216.195 165.511 221.75 165.511C227.397 165.511 232.087 164.417 235.821 162.231C239.646 159.955 242.607 156.904 244.701 153.079H245.247L246.887 163.871H262.597V96.1123H244.154V131.085C244.154 135.001 243.471 138.37 242.105 141.193C240.739 144.017 238.827 146.203 236.368 147.751C234 149.208 231.222 149.937 228.034 149.937C223.116 149.936 219.473 148.434 217.105 145.429C214.829 142.423 213.69 138.097 213.69 132.451V96.1123H195.385ZM389.744 94.4736C383.278 94.4737 377.404 95.9761 372.122 98.9814C366.84 101.987 362.65 106.176 359.554 111.55C356.457 116.832 354.909 122.98 354.909 129.992C354.909 136.913 356.412 143.06 359.417 148.434C362.513 153.807 366.703 157.997 371.985 161.002C377.268 164.007 383.187 165.511 389.744 165.511C396.301 165.511 402.176 164.007 407.367 161.002C412.649 157.997 416.839 153.853 419.936 148.57C423.032 143.197 424.58 137.004 424.58 129.992C424.58 122.98 423.032 116.832 419.936 111.55C416.93 106.177 412.786 101.987 407.504 98.9814C402.222 95.976 396.301 94.4736 389.744 94.4736ZM189.869 94.4736C186.044 94.4736 182.583 94.8825 179.486 95.7021C176.481 96.4308 173.795 97.9798 171.427 100.348C169.059 102.624 166.873 106.176 164.869 111.003H164.323L162.684 96.1123H146.974V163.871H165.416V133.134C165.416 129.673 165.826 126.713 166.646 124.254C167.556 121.795 168.831 119.837 170.471 118.38C172.11 116.832 174.114 115.739 176.481 115.102C178.94 114.373 181.718 114.009 184.814 114.009H189.869V94.4736ZM310.872 109.637C314.606 109.637 317.839 110.502 320.571 112.232C323.395 113.963 325.535 116.376 326.992 119.473C328.54 122.478 329.314 126.03 329.314 130.128C329.314 134.135 328.54 137.688 326.992 140.784C325.535 143.789 323.394 146.157 320.571 147.888C317.839 149.618 314.606 150.483 310.872 150.483C307.229 150.483 303.996 149.618 301.173 147.888C298.35 146.157 296.164 143.789 294.616 140.784C293.068 137.688 292.294 134.135 292.294 130.128C292.294 126.03 293.068 122.478 294.616 119.473C296.164 116.376 298.35 113.963 301.173 112.232C303.996 110.502 307.229 109.637 310.872 109.637ZM389.881 110.047C392.704 110.047 395.3 110.775 397.668 112.232C400.127 113.69 402.085 115.921 403.542 118.927C404.999 121.841 405.728 125.53 405.728 129.992C405.727 134.454 404.999 138.188 403.542 141.193C402.085 144.108 400.127 146.294 397.668 147.751C395.3 149.208 392.613 149.937 389.607 149.937C386.784 149.936 384.143 149.208 381.685 147.751C379.317 146.294 377.404 144.108 375.947 141.193C374.49 138.188 373.761 134.455 373.761 129.992C373.761 125.53 374.49 121.841 375.947 118.927C377.404 115.921 379.362 113.69 381.821 112.232C384.28 110.775 386.967 110.047 389.881 110.047ZM101.43 107.997C104.981 107.997 107.85 108.954 110.036 110.866C112.313 112.688 113.452 115.465 113.452 119.199C113.452 122.933 112.313 125.756 110.036 127.669C107.85 129.49 104.937 130.401 101.294 130.401C97.7421 130.401 94.8276 129.49 92.5508 127.669C90.3651 125.756 89.2715 122.933 89.2715 119.199C89.2715 115.465 90.3651 112.688 92.5508 110.866C94.8275 108.954 97.7871 107.997 101.43 107.997Z" fill="#00458C"/></svg>
+    <div class="wrap">
+      <span class="eyebrow">Documentos legais</span>
+      <h1>Privacidade <em>e cookies</em></h1>
+      <p class="sub">Como o Grupo Beiramar trata os dados pessoais de quem visita este site e entra em contato conosco, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+      <div class="legal-meta">
+        <span class="updated">Última atualização: <strong>9 de novembro de 2026</strong></span>
+        <a href="#cookies" class="btn btn-ghost" data-cookie-preferences>Gerenciar cookies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="wrap legal-grid">
+      <aside class="toc" aria-label="Nesta página">
+        <p>Nesta página</p>
+        <ol>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#dados">Dados que coletamos</a></li>
+          <li><a href="#finalidades">Para que usamos</a></li>
+          <li><a href="#compartilhamento">Com quem compartilhamos</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#prazos">Por quanto tempo guardamos</a></li>
+          <li><a href="#direitos">Seus direitos</a></li>
+          <li><a href="#seguranca">Segurança e encarregado</a></li>
+          <li><a href="#alteracoes">Alterações</a></li>
+        </ol>
+      </aside>
+
+      <div class="legal-body">
+        <section id="quem-somos">
+          <span class="num">01</span>
+          <h2>Quem somos</h2>
+          <p>A controladora dos dados pessoais tratados neste site é a <span class="tbd">[razão social]</span>, inscrita no CNPJ sob o nº <span class="tbd">[CNPJ]</span>, com sede na CLS 402, Bloco A, Loja 27, Asa Sul, Brasília — DF, CEP 70236-510 (“Grupo Beiramar”).</p>
+          <p>O Grupo Beiramar reúne a Beiramar Imóveis, a BRM Asset, a BRM IB e a BRM Inc. Esta política vale para o site <strong>grupobeiramar.com.br</strong>. Os sites de cada empresa do grupo e os de terceiros acessados a partir daqui têm políticas próprias.</p>
+        </section>
+
+        <section id="dados">
+          <span class="num">02</span>
+          <h2>Dados que coletamos</h2>
+          <p>Coletamos apenas o necessário para atender você e melhorar o site:</p>
+          <div class="cards">
+            <div class="card"><span class="tag">Você informa</span><strong>Formulário de contato</strong><p>Nome, e-mail, assunto escolhido e o conteúdo da mensagem.</p></div>
+            <div class="card"><span class="tag">Só com autorização</span><strong>Navegação</strong><p>Páginas vistas, tempo de visita, dispositivo, navegador, localização aproximada e interações como cliques e rolagem.</p></div>
+          </div>
+          <p style="margin-top:20px">Também guardamos no seu navegador a sua escolha sobre cookies. Este site não é destinado a menores de 18 anos e não coleta intencionalmente dados deles.</p>
+        </section>
+
+        <section id="finalidades">
+          <span class="num">03</span>
+          <h2>Para que usamos os dados</h2>
+          <ul>
+            <li><strong>Responder ao seu contato</strong> e encaminhá-lo à empresa do grupo responsável pelo assunto — legítimo interesse e procedimentos preliminares a um contrato (art. 7º, IX e V, da LGPD).</li>
+            <li><strong>Entender como o site é usado</strong>, de forma agregada, para melhorá-lo — somente com o seu consentimento, que pode ser retirado a qualquer momento (art. 7º, I).</li>
+            <li><strong>Garantir a segurança do site e cumprir obrigações legais</strong>, inclusive atender a autoridades — cumprimento de obrigação legal (art. 7º, II).</li>
+          </ul>
+          <p>Não vendemos dados pessoais e não usamos os dados deste site para publicidade.</p>
+        </section>
+
+        <section id="compartilhamento">
+          <span class="num">04</span>
+          <h2>Com quem compartilhamos</h2>
+          <ul>
+            <li><strong>Empresas do Grupo Beiramar</strong>, quando necessário para responder à sua solicitação.</li>
+            <li><strong>Prestadores de serviço</strong> que tratam os dados conforme nossas instruções: Hostinger (hospedagem do site), Web3Forms (envio do formulário de contato por e-mail) e, apenas com o seu consentimento, Google (Google Analytics) e Microsoft (Microsoft Clarity).</li>
+            <li><strong>Autoridades públicas</strong>, quando exigido por lei ou ordem judicial.</li>
+          </ul>
+          <p>Alguns desses prestadores armazenam dados em servidores fora do Brasil. Nesses casos, a transferência internacional segue as hipóteses e garantias do art. 33 da LGPD.</p>
+        </section>
+
+        <section id="cookies">
+          <span class="num">05</span>
+          <h2>Cookies</h2>
+          <p>Cookies são pequenos arquivos que o site grava no seu navegador para lembrar informações entre uma visita e outra. Tecnologias semelhantes, como o armazenamento local do navegador, recebem o mesmo tratamento.</p>
+          <h3>Categorias</h3>
+          <ul>
+            <li><strong>Necessários</strong> — garantem o funcionamento do site e guardam as suas escolhas de cookies. Ficam sempre ativos.</li>
+            <li><strong>Análise</strong> — Google Analytics e Microsoft Clarity mostram, de forma agregada, como as pessoas usam o site. O Clarity gera reproduções das visitas (cliques, rolagem e movimento do mouse) sem registrar o que é digitado nos campos. Só são ativados se você autorizar.</li>
+          </ul>
+          <h3>O que o site utiliza</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nome</th><th>Categoria</th><th>Ferramenta e finalidade</th><th>Duração</th></tr></thead>
+              <tbody>
+                <tr><td>gb-consent</td><td><span class="pill pill-nec">Necessário</span></td><td>Grupo Beiramar — guarda a sua escolha de cookies.</td><td>12 meses</td></tr>
+                <tr><td>_ga</td><td><span class="pill pill-ana">Análise</span></td><td>Google Analytics — distingue visitantes de forma anônima.</td><td>2 anos</td></tr>
+                <tr><td>_ga_&lt;ID&gt;</td><td><span class="pill pill-ana">Análise</span></td><td>Google Analytics — mantém o estado da sessão.</td><td>2 anos</td></tr>
+                <tr><td>_clck</td><td><span class="pill pill-ana">Análise</span></td><td>Microsoft Clarity — identifica o mesmo visitante entre visitas.</td><td>1 ano</td></tr>
+                <tr><td>_clsk</td><td><span class="pill pill-ana">Análise</span></td><td>Microsoft Clarity — agrupa as páginas vistas em uma mesma sessão.</td><td>1 dia</td></tr>
+                <tr><td>CLID, MUID</td><td><span class="pill pill-ana">Análise</span></td><td>Microsoft Clarity — cookies do domínio da Microsoft usados na medição.</td><td>1 ano</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:16px">A hospedagem pode gravar cookies técnicos temporários para segurança e desempenho do servidor. Eles não identificam você.</p>
+          <div class="callout">
+            <p>Você pode mudar a sua escolha a qualquer momento. Ela vale por 12 meses; depois disso, perguntaremos de novo.</p>
+            <a href="#cookies" class="btn btn-ghost" data-cookie-preferences>Gerenciar cookies</a>
+          </div>
+        </section>
+
+        <section id="prazos">
+          <span class="num">06</span>
+          <h2>Por quanto tempo guardamos</h2>
+          <p>As mensagens do formulário são guardadas pelo tempo necessário para o atendimento e eventuais desdobramentos. Os registros de acesso ao site são mantidos por, no mínimo, seis meses, como exige o Marco Civil da Internet. Os dados de navegação seguem os prazos dos cookies acima e a retenção configurada nas ferramentas de análise. Encerrados esses prazos, os dados são eliminados ou anonimizados.</p>
+        </section>
+
+        <section id="direitos">
+          <span class="num">07</span>
+          <h2>Seus direitos</h2>
+          <p>Como titular, você pode, a qualquer momento e gratuitamente:</p>
+          <ul>
+            <li>confirmar se tratamos seus dados, acessá-los e corrigi-los;</li>
+            <li>pedir a anonimização, o bloqueio ou a eliminação de dados desnecessários ou tratados em desconformidade com a LGPD;</li>
+            <li>saber com quem compartilhamos seus dados e pedir a portabilidade;</li>
+            <li>retirar o consentimento e pedir a eliminação dos dados tratados com base nele;</li>
+            <li>opor-se a tratamentos que descumpram a LGPD.</li>
+          </ul>
+          <p>Para exercer seus direitos, fale com o nosso encarregado (seção 8). Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+        </section>
+
+        <section id="seguranca">
+          <span class="num">08</span>
+          <h2>Segurança e encarregado</h2>
+          <p>Adotamos medidas técnicas e administrativas para proteger os dados contra acessos não autorizados, perda ou divulgação indevida, como conexão criptografada (HTTPS) e controle de acesso. Se ocorrer um incidente que possa gerar risco relevante, comunicaremos os titulares afetados e a ANPD.</p>
+          <p>O encarregado pelo tratamento de dados pessoais (DPO) do Grupo Beiramar é <span class="tbd">[nome do encarregado]</span>, que pode ser contatado pelo e-mail <span class="tbd">[e-mail do encarregado]</span>.</p>
+        </section>
+
+        <section id="alteracoes">
+          <span class="num">09</span>
+          <h2>Alterações desta política</h2>
+          <p>Esta política pode ser atualizada para refletir mudanças no site, na legislação ou nas nossas práticas. A data da última atualização aparece no topo desta página.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="/" class="brand"><svg class="logo logo-neg" viewBox="0 0 2466 265" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grupo Beiramar"><path d="M851.474 149.402H959.987V111.057H851.474V39.3625H986.676V0.138672H799.021V264.114H988.48V223.502H851.474V149.402Z" fill="#EEF5FF"/>
+<path d="M1083.27 0.138672H1030.77V264.114H1083.27V0.138672Z" fill="#EEF5FF"/>
+<path d="M1354.02 77.7539C1354.38 66.8702 1352.19 56.0525 1347.64 46.1602C1343.09 36.2679 1336.29 27.5737 1327.79 20.7682C1309.89 6.5218 1287.92 0.138672 1251.61 0.138672H1138.15V264.114H1190.74V38.2524H1247.68C1284.68 38.2524 1299.34 57.1706 1299.34 77.06C1299.34 109.808 1269.18 117.81 1243.33 117.81H1235.65L1297.12 264.114H1352.63L1301.29 147.737C1316.18 141.816 1353.83 127.2 1353.83 77.7539" fill="#EEF5FF"/>
+<path d="M657.812 224.658H583.481V37.79H652.447C664.381 37.79 696.343 42.1379 696.343 73.0359C696.343 96.1632 679.321 111.427 653.881 111.427H626.729V149.078H657.812C686.722 149.078 704.067 165.221 704.067 186.591C704.067 211.106 684.686 224.658 657.812 224.658ZM695.464 127.524C747.963 116.423 748.425 76.4126 748.425 68.503C748.574 52.6067 742.804 37.2236 732.236 25.3475C709.941 -1.98503e-05 676.222 0 653.603 0H533.526V264.114H667.433C689.636 264.114 711.653 261.801 733.947 244.825C749.258 232.846 757.584 211.106 757.584 192.095C757.793 176.145 751.827 160.731 740.932 149.078C725.668 133.167 707.259 130.114 695.464 127.663" fill="#EEF5FF"/>
+<path d="M2062.46 0.138672L1965.33 264.114H2010.52L2012 260.275L2088.69 45.3294L2136.38 175.629H2072.59V176.461C2134.34 184.741 2162.1 246.953 2165.1 254.4L2167.46 261.015L2168.57 264.114H2224.68L2126.85 0.138672H2062.46Z" fill="#EEF5FF"/>
+<path d="M1468.11 0.138672L1370.98 264.114H1416.03L1417.42 260.275L1494.43 45.3294L1542.08 175.629H1478.24V176.461C1543.97 185.25 1571.45 255.88 1571.45 255.88L1573.94 262.633L1574.41 264.114H1630.56L1532.45 0.138672H1468.11Z" fill="#EEF5FF"/>
+<path d="M2464.94 77.7539C2465.3 66.8756 2463.12 56.0639 2458.57 46.1736C2454.03 36.2833 2447.25 27.5856 2438.76 20.7682C2420.77 6.5218 2398.94 0.138672 2362.58 0.138672H2249.21V264.114H2301.67V38.2524H2358.65C2395.65 38.2524 2410.32 57.1706 2410.32 77.06C2410.32 109.808 2380.16 117.81 2354.21 117.81H2346.67L2408.33 264.114H2463.83L2412.58 147.737C2427.52 141.816 2465.08 127.2 2465.08 77.7539" fill="#EEF5FF"/>
+<path d="M1797.92 170.356L1737.14 0.138672H1654.8V264.16H1697.64V32.9794L1778.67 264.16H1806.24L1887.14 32.9794V264.16H1941.03V0.138672H1858.19L1797.92 170.356Z" fill="#EEF5FF"/>
+<g clip-path="url(#clip_fneg)">
+<path d="M493.526 138.936L493.517 140.531C492.65 208.955 436.93 264.139 368.301 264.139H125.226C56.0556 264.138 0 208.082 0 138.912V125.365C9.16384e-07 56.1952 56.0556 0.139861 125.226 0.139648H493.526V138.936ZM101.43 94.4736C95.6923 94.4737 90.7293 95.612 86.54 97.8887C82.4418 100.074 79.2534 103.034 76.9766 106.768C74.7909 110.501 73.6983 114.646 73.6982 119.199C73.6982 123.753 74.7909 127.897 76.9766 131.631C78.1797 133.604 79.6398 135.359 81.3516 136.899L69.5996 148.98V152.122C70.7836 153.306 72.3326 154.491 74.2451 155.675C75.2007 156.266 76.2473 156.835 77.3848 157.381C74.8 159.339 72.7972 161.502 71.376 163.871C69.7367 166.512 68.917 169.427 68.917 172.614C68.917 176.895 70.2378 180.538 72.8789 183.543C75.6111 186.639 79.391 188.962 84.2178 190.51C89.1356 192.058 94.8279 192.832 101.294 192.832C108.397 192.832 114.226 191.739 118.779 189.554C123.333 187.368 126.703 184.545 128.889 181.084C131.166 177.714 132.304 174.253 132.304 170.701C132.304 166.603 131.394 163.142 129.572 160.319C127.751 157.496 124.927 155.264 121.102 153.625C117.277 151.986 112.358 150.939 106.348 150.483C102.796 150.119 99.8365 149.801 97.4688 149.527C95.1919 149.163 93.2787 148.798 91.7305 148.434C90.2735 148.069 89.0437 147.705 88.042 147.341C87.688 147.212 87.3407 147.081 86.998 146.952L91.123 142.369C94.2248 143.313 97.6594 143.789 101.43 143.789C107.167 143.789 112.085 142.696 116.184 140.511C120.373 138.325 123.561 135.365 125.747 131.631C127.933 127.897 129.025 123.753 129.025 119.199C129.025 114.834 128.018 110.847 126.01 107.235L137.905 106.085V96.1123H112.174C108.986 95.0197 105.404 94.4736 101.43 94.4736ZM316.2 94.4736C312.466 94.4736 309.006 95.0195 305.818 96.1123C302.722 97.2052 299.943 98.7532 297.484 100.757C295.117 102.76 293.067 105.174 291.337 107.997H290.791L289.698 96.1123H274.261V191.193H292.703V155.128C294.98 157.951 298.031 160.41 301.856 162.505C305.772 164.508 310.371 165.511 315.653 165.511C322.302 165.511 328.039 164.007 332.866 161.002C337.693 157.906 341.427 153.671 344.068 148.298C346.709 142.925 348.03 136.823 348.03 129.992C348.03 123.162 346.709 117.059 344.068 111.686C341.427 106.312 337.739 102.123 333.003 99.1182C328.267 96.0217 322.666 94.4736 316.2 94.4736ZM92.4111 161.73C95.5005 162.217 98.9618 162.614 102.796 162.915C107.805 163.279 111.175 164.099 112.905 165.374C114.636 166.74 115.501 168.652 115.501 171.111C115.501 172.842 114.954 174.344 113.861 175.619C112.768 176.985 111.175 178.033 109.08 178.762C106.986 179.49 104.39 179.854 101.294 179.854C98.1975 179.854 95.4646 179.49 93.0967 178.762C90.7289 178.124 88.8622 177.168 87.4961 175.893C86.2211 174.618 85.583 173.069 85.583 171.248C85.583 168.789 86.494 166.603 88.3154 164.69C89.3369 163.618 90.7022 162.631 92.4111 161.73ZM195.385 96.1123V134.09C195.385 140.92 196.432 146.704 198.526 151.439C200.621 156.084 203.627 159.59 207.543 161.958C211.459 164.326 216.195 165.511 221.75 165.511C227.397 165.511 232.087 164.417 235.821 162.231C239.646 159.955 242.607 156.904 244.701 153.079H245.247L246.887 163.871H262.597V96.1123H244.154V131.085C244.154 135.001 243.471 138.37 242.105 141.193C240.739 144.017 238.827 146.203 236.368 147.751C234 149.208 231.222 149.937 228.034 149.937C223.116 149.936 219.473 148.434 217.105 145.429C214.829 142.423 213.69 138.097 213.69 132.451V96.1123H195.385ZM389.744 94.4736C383.278 94.4737 377.404 95.9761 372.122 98.9814C366.84 101.987 362.65 106.176 359.554 111.55C356.457 116.832 354.909 122.98 354.909 129.992C354.909 136.913 356.412 143.06 359.417 148.434C362.513 153.807 366.703 157.997 371.985 161.002C377.268 164.007 383.187 165.511 389.744 165.511C396.301 165.511 402.176 164.007 407.367 161.002C412.649 157.997 416.839 153.853 419.936 148.57C423.032 143.197 424.58 137.004 424.58 129.992C424.58 122.98 423.032 116.832 419.936 111.55C416.93 106.177 412.786 101.987 407.504 98.9814C402.222 95.976 396.301 94.4736 389.744 94.4736ZM189.869 94.4736C186.044 94.4736 182.583 94.8825 179.486 95.7021C176.481 96.4308 173.795 97.9798 171.427 100.348C169.059 102.624 166.873 106.176 164.869 111.003H164.323L162.684 96.1123H146.974V163.871H165.416V133.134C165.416 129.673 165.826 126.713 166.646 124.254C167.556 121.795 168.831 119.837 170.471 118.38C172.11 116.832 174.114 115.739 176.481 115.102C178.94 114.373 181.718 114.009 184.814 114.009H189.869V94.4736ZM310.872 109.637C314.606 109.637 317.839 110.502 320.571 112.232C323.395 113.963 325.535 116.376 326.992 119.473C328.54 122.478 329.314 126.03 329.314 130.128C329.314 134.135 328.54 137.688 326.992 140.784C325.535 143.789 323.394 146.157 320.571 147.888C317.839 149.618 314.606 150.483 310.872 150.483C307.229 150.483 303.996 149.618 301.173 147.888C298.35 146.157 296.164 143.789 294.616 140.784C293.068 137.688 292.294 134.135 292.294 130.128C292.294 126.03 293.068 122.478 294.616 119.473C296.164 116.376 298.35 113.963 301.173 112.232C303.996 110.502 307.229 109.637 310.872 109.637ZM389.881 110.047C392.704 110.047 395.3 110.775 397.668 112.232C400.127 113.69 402.085 115.921 403.542 118.927C404.999 121.841 405.728 125.53 405.728 129.992C405.727 134.454 404.999 138.188 403.542 141.193C402.085 144.108 400.127 146.294 397.668 147.751C395.3 149.208 392.613 149.937 389.607 149.937C386.784 149.936 384.143 149.208 381.685 147.751C379.317 146.294 377.404 144.108 375.947 141.193C374.49 138.188 373.761 134.455 373.761 129.992C373.761 125.53 374.49 121.841 375.947 118.927C377.404 115.921 379.362 113.69 381.821 112.232C384.28 110.775 386.967 110.047 389.881 110.047ZM101.43 107.997C104.981 107.997 107.85 108.954 110.036 110.866C112.313 112.688 113.452 115.465 113.452 119.199C113.452 122.933 112.313 125.756 110.036 127.669C107.85 129.49 104.937 130.401 101.294 130.401C97.7421 130.401 94.8276 129.49 92.5508 127.669C90.3651 125.756 89.2715 122.933 89.2715 119.199C89.2715 115.465 90.3651 112.688 92.5508 110.866C94.8275 108.954 97.7871 107.997 101.43 107.997Z" fill="#EEF5FF"/>
+</g>
+<defs>
+<clipPath id="clip_fneg">
+<rect width="493.526" height="264.021" fill="white" transform="translate(0 0.138184)"/>
+</clipPath>
+</defs></svg></a>
+        <p>Há 45 anos construindo o jeito de morar e investir.</p>
+      </div>
+      <div class="foot-col">
+        <h4>O Grupo</h4>
+        <a href="/#grupo">Nossa história</a>
+        <a href="/#frentes">Frentes</a>
+        <!-- <a href="/#news">News</a> -->
+      </div>
+      <div class="foot-col">
+        <h4>Frentes</h4>
+        <a href="/#frentes">Beiramar Imóveis</a>
+        <a href="/#frentes">BRM Asset</a>
+        <a href="/#frentes">BRM IB</a>
+        <a href="/#frentes">BRM Inc</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="tel:+556132621001">(61) 3262-1001</a>
+        <a href="mailto:contato@grupobeiramar.com.br">contato@grupobeiramar.com.br</a>
+      </div>
+    </div>
+
+    <div class="foot-addr">
+      <div>
+        <div class="foot-unit-name">Asa Sul <span class="foot-unit-badge">Sede</span></div>
+        <div class="foot-unit-addr">CLS 402, Bloco A, Loja 27<br>Asa Sul, Brasília — DF · 70236-510</div>
+      </div>
+      <div>
+        <div class="foot-unit-name">Águas Claras</div>
+        <div class="foot-unit-addr">Ed. The Park · R. 17 Norte, 3<br>Águas Claras, Brasília — DF · 71910-540</div>
+      </div>
+      <div>
+        <div class="foot-unit-name">Taguatinga</div>
+        <div class="foot-unit-addr">St. A Norte, Lojas 01/02<br>Taguatinga, Brasília — DF · 72110-025</div>
+      </div>
+      <div>
+        <div class="foot-unit-name">Florianópolis</div>
+        <div class="foot-unit-addr">Rua Bocaiúva, 2125<br>Centro, Florianópolis — SC · 88015-530</div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div class="foot-meta">
+        <p>© 2026 Grupo Beiramar. Todos os direitos reservados.</p>
+        <nav class="foot-legal" aria-label="Documentos legais"><a href="/privacidade.html">Privacidade e cookies</a><a href="/privacidade.html#cookies" data-cookie-preferences>Preferências de cookies</a></nav>
+      </div>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/beiramarimoveis/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/company/grupobeiramar/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></a>
+        <a href="http://facebook.com/beiramarimoveis" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // cabeçalho compacto ao rolar
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>20);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // destaca no índice a seção em leitura
+  const links=[...document.querySelectorAll('.toc a')];
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      links.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+e.target.id));
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('.legal-body section').forEach(s=>io.observe(s));
+</script>
+<script src="/js/consentimento.js"></script>
+</body>
+</html>
