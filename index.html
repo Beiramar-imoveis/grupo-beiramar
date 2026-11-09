@@ -34,6 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/consentimento.css">
+<link rel="stylesheet" href="/css/menu.css">
 <style>
 
 /* Oculta as seções Vídeo Institucional e News */
@@ -129,23 +130,10 @@
   .nav-cta{background:var(--royal);color:#fff!important;padding:11px 22px;border-radius:2px;font-weight:600}
   .nav-cta::after{display:none!important}
   .nav-cta:hover{background:var(--navy)}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
-  .burger span{width:26px;height:2px;background:currentColor;color:var(--navy);transition:.3s}
-  header.on-dark:not(.scrolled) .burger span{background:#fff}
   @media(max-width:920px){
     .navlinks{display:none}
-    .burger{display:flex}
   }
 
-  /* mobile menu */
-  .mobile-menu{
-    position:fixed;inset:0;z-index:99;background:var(--ink);
-    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:28px;
-    opacity:0;pointer-events:none;transition:.45s var(--ease);
-  }
-  .mobile-menu.open{opacity:1;pointer-events:all}
-  .mobile-menu a{color:#fff;font-family:var(--display);font-size:30px}
-  .mobile-menu .close{position:absolute;top:32px;right:32px;font-size:34px;color:#fff;background:none;border:none;cursor:pointer}
 
  /* ---------- hero ---------- */
 
@@ -942,7 +930,7 @@
 <rect width="493.526" height="264.021" fill="white" transform="translate(0 0.138184)"/>
 </clipPath>
 </defs></svg></a>
-    <nav class="navlinks">
+    <nav class="navlinks" id="navlinks" aria-label="Menu principal">
       <a href="#top">Início</a>
       <a href="#grupo">Nossa História</a>
       <a href="#frentes">Empresas do Grupo</a>
@@ -950,19 +938,9 @@
       <!-- <a href="#news">News</a> -->
       <a href="#contato" class="nav-cta">Fale com o Grupo</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navlinks"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
   </div>
 </header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close" id="closeMenu" aria-label="Fechar menu">&times;</button>
-  <a href="#top">Início</a>
-  <a href="#grupo">Nossa História</a>
-  <a href="#frentes">Empresas do Grupo</a>
-  <a href="#portfolio">Portfólio</a>
-  <!-- <a href="#news">News</a> -->
-  <a href="#contato">Fale com o Grupo</a>
-</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
@@ -1692,11 +1670,7 @@
   };
   window.addEventListener('scroll',onScroll);onScroll();
 
-  // mobile menu
-  const mm=document.getElementById('mobileMenu');
-  document.getElementById('burger').onclick=()=>mm.classList.add('open');
-  document.getElementById('closeMenu').onclick=()=>mm.classList.remove('open');
-  mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('open'));
+  // menu do celular: js/menu.js
 
   // reveal on scroll
   const io=new IntersectionObserver((entries)=>{
@@ -1797,6 +1771,7 @@
 
   })();
 </script>
+<script src="/js/menu.js"></script>
 <script src="/js/consentimento.js"></script>
 </body>
 </html>

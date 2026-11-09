@@ -1,0 +1,67 @@
+/* Menu do celular e tablet — Grupo Beiramar
+   Mesmo comportamento do site da BRM Asset: botão redondo (☰ ↔ ✕), cabeçalho sólido
+   e painel claro abaixo dele, com links grandes, divisórias e setas discretas. */
+
+.nav-toggle{
+  display:none;flex-shrink:0;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line,rgba(0,69,140,.15));background:transparent;color:var(--navy,#00458C);
+  align-items:center;justify-content:center;cursor:pointer;
+  transition:background-color .3s,border-color .3s,color .3s;
+}
+.nav-toggle:focus-visible{outline:2px solid var(--royal-soft,#1CA3E0);outline-offset:3px}
+header.on-dark:not(.scrolled):not(.is-open) .nav-toggle{border-color:rgba(255,255,255,.35);color:#fff}
+
+@keyframes menu-in{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+
+@media(max-width:920px){
+  .nav-toggle{display:inline-flex}
+  html.menu-open,html.menu-open body{overflow:hidden}
+
+  /* Cabeçalho sólido, com a logo colorida, enquanto o menu está aberto */
+  header.is-open{
+    background:#fff!important;border-bottom:1px solid var(--line,rgba(0,69,140,.15))!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  }
+  header.is-open .brand .logo-neg{display:none!important}
+  header.is-open .brand .logo-color{display:block!important}
+  header.is-open .nav-toggle{background:var(--navy,#00458C);border-color:var(--navy,#00458C);color:#fff}
+
+  /* Painel claro abaixo do cabeçalho */
+  header.is-open .navlinks{
+    display:flex!important;position:fixed;top:84px;left:0;right:0;bottom:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:8px 32px 40px;
+    background:linear-gradient(180deg,#fff 0%,var(--paper,#F6FAFF) 100%);
+    overflow-y:auto;overscroll-behavior:contain;
+    animation:menu-in .35s var(--ease,cubic-bezier(.22,.61,.36,1)) both;
+  }
+  header.is-open .navlinks a{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 0;border-bottom:1px solid #D6E3F3;
+    color:var(--navy,#00458C)!important;font-size:20px;font-weight:500;
+  }
+  header.is-open .navlinks a[aria-current="page"]{color:var(--royal,#1D63FF)!important;font-weight:600}
+
+  /* o sublinhado do desktop vira uma seta discreta */
+  header.is-open .navlinks a::after,
+  header.is-open .navlinks a:hover::after{
+    content:"";position:static;width:8px;height:8px;
+    border-top:2px solid currentColor;border-right:2px solid currentColor;
+    background:none;opacity:.45;transform:rotate(45deg);transition:none;
+  }
+  header.is-open .navlinks a[aria-current="page"]::after{opacity:1}
+
+  /* "Fale com o Grupo" vira o botão de destaque no fim do painel */
+  header.is-open .navlinks .nav-cta{
+    margin-top:28px;padding:18px 22px;border-bottom:0;border-radius:2px;
+    background:var(--royal,#1D63FF);color:#fff!important;font-size:16px;font-weight:600;
+  }
+  header.is-open .navlinks .nav-cta::after{display:block!important;opacity:1}
+  header.is-open .navlinks .nav-cta:hover{background:var(--navy,#00458C)}
+}
+@media(max-width:720px){
+  header.is-open .navlinks{padding:8px 22px 40px}
+}
+@media(prefers-reduced-motion:reduce){
+  header.is-open .navlinks{animation:none}
+}

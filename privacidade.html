@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/consentimento.css">
+<link rel="stylesheet" href="/css/menu.css">
 <style>
   :root{
     /* Paleta oficial — Manual de Identidade Visual Grupo Beiramar (igual ao index.html) */
@@ -43,7 +44,6 @@
   .btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
   .btn-ghost:hover{border-color:var(--navy);background:var(--mist)}
   .arrow{transition:transform .35s var(--ease)}
-  .btn:hover .arrow,.back:hover .arrow{transform:translateX(-4px)}
 
   /* ---------- header (claro, logo colorida) ---------- */
   header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s var(--ease);background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent}
@@ -59,8 +59,7 @@
   .nav-cta{background:var(--royal);color:#fff!important;padding:11px 22px;border-radius:2px;font-weight:600}
   .nav-cta::after{display:none!important}
   .nav-cta:hover{background:var(--navy)}
-  .back{display:none;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy)}
-  @media(max-width:920px){.navlinks{display:none}.back{display:inline-flex}}
+  @media(max-width:920px){.navlinks{display:none}}
 
   /* ---------- topo da página (azuis claros) ---------- */
   .legal-hero{
@@ -176,14 +175,14 @@
 <rect width="493.526" height="264.021" fill="white" transform="translate(0 0.138184)"/>
 </clipPath>
 </defs></svg></a>
-    <nav class="navlinks" aria-label="Menu principal">
+    <nav class="navlinks" id="navlinks" aria-label="Menu principal">
       <a href="/">Início</a>
       <a href="/#grupo">Nossa História</a>
       <a href="/#frentes">Empresas do Grupo</a>
       <a href="/#portfolio">Portfólio</a>
       <a href="/#contato" class="nav-cta">Fale com o Grupo</a>
     </nav>
-    <a href="/" class="back"><span class="arrow">←</span> Voltar ao site</a>
+    <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navlinks"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
   </div>
 </header>
 
@@ -416,6 +415,7 @@
   },{rootMargin:'-30% 0px -60% 0px'});
   document.querySelectorAll('.legal-body section').forEach(s=>io.observe(s));
 </script>
+<script src="/js/menu.js"></script>
 <script src="/js/consentimento.js"></script>
 </body>
 </html>
